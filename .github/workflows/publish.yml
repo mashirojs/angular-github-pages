@@ -8,7 +8,7 @@ jobs:
   build-and-publish:
     runs-on: ubunts-latest
     steps:
-      - actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: build angular app
         uses: actions/setup-node@v2
         with:
