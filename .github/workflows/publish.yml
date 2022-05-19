@@ -1,0 +1,26 @@
+name: deploy angular app
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-publish:
+    runs-on: ubunts-latest
+    steps:
+      - actions/checkout@v2
+      - name: build angular app
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          # cache: npm
+      - name: install npm packages
+        run: npm ci
+      - name: build angular app
+        run: ng build
+      - name: publish
+        uses: peaceiris/actions-gh-pages@v3
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
