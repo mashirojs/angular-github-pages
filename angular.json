@@ -33,6 +33,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/angular-github-pages/",
               "budgets": [
                 {
                   "type": "initial",
