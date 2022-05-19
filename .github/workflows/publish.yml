@@ -17,7 +17,7 @@ jobs:
       - name: install npm packages
         run: npm ci
       - name: build angular app
-        run: ng build
+        run: npm run build
       - name: publish
         uses: peaceiris/actions-gh-pages@v3
         with: 
